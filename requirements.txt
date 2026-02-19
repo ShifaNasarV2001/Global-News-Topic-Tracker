@@ -1,0 +1,7 @@
+streamlit
+pandas
+gnews
+scikit-learn
+sentence-transformers
+google-generativeai
+python-dotenv
