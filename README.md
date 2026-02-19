@@ -1,87 +1,201 @@
-# Global News Topic Tracker
+# 🌐 Global News Topic Tracker
 
-An AI-powered Streamlit web application that automatically fetches the latest news from around the world, identifies trending topics using machine learning, and summarizes them using the Google Gemini Large Language Model (LLM).
+An **AI-powered Streamlit web application** that automatically fetches the latest global news, identifies trending topics using machine learning, and generates concise summaries using the Google Gemini Large Language Model (LLM).
 
+This project helps users quickly understand what’s trending worldwide without reading dozens of articles.
 
-## Features
-- **Automated News Aggregation** : Fetches and combines recent articles from multiple categories (Top News, World, Tech, Business).
+---
 
-- **AI-Powered Topic Clustering** : Uses sentence-transformers to create vector embeddings of news headlines and scikit-learn to cluster similar articles into distinct topics.
+## 🚀 Features
 
-- **LLM-Generated Summaries** : For each topic cluster, it prompts the Google Gemini model to generate a concise title and a neutral, multi-sentence summary.
+### 📰 Automated News Aggregation
 
-- **Interactive UI** : A user-friendly web interface built with Streamlit, allowing control over the number of articles to fetch and topics to identify.
+* Fetches latest articles from multiple categories:
 
-- **Optimized Performance**: Caches expensive operations like fetching news and generating summaries to provide a fast and responsive experience on subsequent runs.
+  * Top News
+  * World
+  * Technology
+  * Business
+* Combines and processes them into a unified dataset
 
-- **Secure API Key Handling**: Loads the Google AI API key securely from a .env file to keep it out of the source code.
+### 🤖 AI-Powered Topic Clustering
 
-## Tech Stack
-Core Framework: Streamlit
+* Uses **sentence-transformers** to generate vector embeddings from news headlines
+* Applies **KMeans clustering** (scikit-learn) to group similar articles
+* Identifies distinct trending topics automatically
 
-Data Handling: Pandas
+### 🧠 LLM-Generated Summaries
 
-News Source: gnews
+* Sends clustered articles to **Google Gemini LLM**
+* Generates:
 
-NLP & Clustering:
+  * A concise topic title
+  * Neutral multi-sentence summary
+* Provides easy-to-read insights for each topic
 
-sentence-transformers
+### 💻 Interactive UI
 
-scikit-learn (KMeans)
+* Built with **Streamlit** for a clean and simple interface
+* Users can:
 
-AI Summarization: Google Generative AI (Gemini 1.5 Flash)
+  * Choose number of articles to fetch
+  * Select number of topics to generate
+  * View summaries and related articles
 
-Environment Variables: python-dotenv
+### ⚡ Optimized Performance
 
+* Caches expensive operations such as:
 
+  * News fetching
+  * Topic clustering
+  * LLM summarization
+* Ensures faster performance on repeated runs
 
-## Setup and Installation
-Follow these steps to set up and run the project locally.
+### 🔐 Secure API Key Handling
 
-Prerequisites
-Python 3.8+
+* Uses `.env` file to store API keys securely
+* Keeps sensitive credentials out of source code
 
-pip package manager
+---
 
-1. Clone the Repository
+## 🧰 Tech Stack
+
+**Core Framework:**
+
+* Streamlit
+
+**Data Handling:**
+
+* Pandas
+
+**News Source:**
+
+* gnews
+
+**NLP & Clustering:**
+
+* sentence-transformers
+* scikit-learn (KMeans)
+
+**AI Summarization:**
+
+* Google Generative AI (Gemini 1.5 Flash)
+
+**Environment Variables:**
+
+* python-dotenv
+
+---
+
+## 🛠 Setup and Installation
+
+Follow these steps to run the project locally.
+
+### 📌 Prerequisites
+
+Make sure you have:
+
+* Python 3.8+
+* pip package manager
+
+---
+
+### 1️⃣ Clone the Repository
+
+```bash
 git clone repository
 cd your-repo-name
+```
 
+---
 
-2. Install Dependencies
-Install all the required Python packages from the requirements.txt file.
+### 2️⃣ Install Dependencies
 
+Install required Python packages:
+
+```bash
 pip install -r requirements.txt
+```
 
-3. Set Up Your API Key
-The application requires a Google AI API Key to function.
+---
 
-Create a file named .env in the root directory of the project.
+### 3️⃣ Set Up Your API Key
 
-Add your API key to the .env file in the following format:
+This project requires a **Google AI API Key**.
 
+Create a `.env` file in the project root directory and add:
+
+```env
 GOOGLE_API_KEY="AIzaSy...your...actual...api...key"
+```
 
-You can get your key from the Google AI Studio.
+You can generate your API key from **Google AI Studio**.
 
-##🚀 How to Run the Application
-Once you have completed the setup, run the following command in your terminal:
+---
 
+## ▶️ How to Run the Application
+
+Run the Streamlit app using:
+
+```bash
 streamlit run app.py
+```
 
-Your web browser should automatically open a new tab with the running application.
+Your browser will automatically open the application.
 
-Using the App
-Use the sliders in the left sidebar to adjust the number of articles to fetch and the number of topics to identify.
+---
 
-Click the "🚀 Generate Trending Topics" button.
+## 🧑‍💻 Using the App
 
-The application will display spinners while it works. Once complete, the main area will populate with expandable sections for each trending topic, including the AI-generated summary and a list of related articles.
+1. Use the sliders in the sidebar to:
 
+   * Select number of articles to fetch
+   * Select number of topics to identify
 
-## Streamlit interface:
+2. Click **"🚀 Generate Trending Topics"**
+
+3. The app will:
+
+   * Fetch latest news
+   * Cluster topics
+   * Generate AI summaries
+
+4. Results will appear as expandable sections showing:
+
+   * Topic title
+   * AI-generated summary
+   * Related news articles
+
+---
+
+## 🖥 Streamlit Interface
+
+### Main Interface
 
 ![Chat Interface Preview](image1.png)
 
+### Topic Display
+
 ![Chat Interface Preview](image2.png)
+
+---
+
+## 📈 Use Cases
+
+* Track global trending topics
+* Market and technology research
+* Media monitoring
+* Content research and analysis
+* AI/ML project demonstration
+
+---
+
+## 🔮 Future Enhancements
+
+* Real-time news streaming
+* Topic sentiment analysis
+* Historical trend tracking
+* Dashboard analytics
+* Multi-language news support
+* Deployment on cloud (AWS/GCP/Azure)
 
